@@ -28,6 +28,9 @@ function handleFileUpload(event) {
                 convertedImage.src = jpgDataUrl;
                 convertedImage.style.display = 'block';
                 originalImage.style.display = 'none';
+                const downloadButton = document.getElementById('downloadButton');
+                downloadButton.href = jpgDataUrl;
+                downloadButton.style.display = 'inline-block';
             });
         };
         reader.readAsDataURL(file);
