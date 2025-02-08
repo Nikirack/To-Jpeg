@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To JPEG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #000000;
+        }
+        .file-inputs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .file-inputs div {
+            text-align: center;
+        }
+        .file-inputs input[type="file"] {
+            display: none;
+        }
+        .file-inputs label, #downloadButton {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 20px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .file-inputs label:hover, #downloadButton:hover {
+            background-color: #f0f0f0;
+        }
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        #originalImage, #convertedImage {
+            margin-top: 20px;
+        }
+        #downloadButton {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To JPEG</h1>
+    <div class="file-inputs">
+        <div>
+            <h2>WebP</h2>
+            <label for="uploadWebP">Choose WebP</label>
+            <input type="file" id="uploadWebP" accept="image/webp">
+        </div>
+        <div>
+            <h2>AVIF</h2>
+            <label for="uploadAVIF">Choose AVIF</label>
+            <input type="file" id="uploadAVIF" accept="image/avif">
+        </div>
+    </div>
+    <br><br>
+    <img id="originalImage" alt="Original Image" style="display: none;">
+    <br><br>
+    <img id="convertedImage" alt="Converted JPEG Image" style="display: none;">
+    <br><br>
+    <a id="downloadButton" download="converted.jpg">Download JPEG</a>
+    <script src="app.js"></script>
+</body>
+</html>
